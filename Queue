@@ -1,0 +1,82 @@
+
+public class queue {
+	int arr[];
+	int rear;
+	int capacity;
+	int front=-1;
+	queue(int size)
+	{
+		arr= new int[size];
+		capacity=size;
+		rear=-1;
+		
+	}
+	public boolean isfull()
+	{
+		if(rear==capacity)
+			return true;
+					
+		else 
+				return false;
+	}
+	public void push(int element)
+	{
+		if(isfull())
+			{System.out.println("The queue is full");
+			System.exit(1);}
+		else
+			arr[++rear]=element;
+	}
+	public  void printqueue()
+	{
+		for(int i =0;i<=rear;i++)
+		{
+			System.out.print(arr[i]+",");
+		}
+	}
+	public boolean isEmpty()
+	{
+		if(rear==-1)
+			return true;
+		else
+			return false;
+	}
+	public void pop()
+	{
+	if(isEmpty()) {
+        System.out.println("empty queue");
+        System.exit(1);
+    }
+    int front = arr[0];
+    for(int i=0; i<rear; i++) {
+        arr[i] = arr[i+1];
+    }
+  rear--;	
+   
+}
+	public int peek()
+	{
+		return front=arr[0];
+	}
+
+	public static void main(String[] args) {
+		// push operation
+		queue q= new queue(4);
+		q.push(1);
+		q.push(2);
+		q.push(3);
+		q.push(4);
+		System.out.print("Queue = ");
+		q.printqueue();
+		//pop operation
+		q.pop();
+		q.pop();
+		System.out.print("\nQueue after pop operation is = ");
+		q.printqueue();
+		System.out.print("\nQueue front element is = "+ q.peek());
+		
+		
+
+	}
+
+}
