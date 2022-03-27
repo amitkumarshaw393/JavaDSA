@@ -1,0 +1,20 @@
+import java.util.Stack;
+	
+public class Stac {
+	
+
+		public static void main(String[] args) {
+			Stack<String> stack= new Stack<>();
+			 stack.push("dog");
+			 stack.push("cat");
+			 stack.push("lion");
+			 stack.push("tiger");
+			 stack.push("birds");
+			 stack.push("animals");
+			 System.out.print("Stack = "+ stack);
+			 stack.pop();
+			 System.out.print("Stack = "+ stack);
+		}
+
+	}
+
