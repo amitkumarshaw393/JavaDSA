@@ -1,0 +1,84 @@
+import java.util.Scanner;
+public class Stack {
+	int arr[];
+	int top,capacity;
+    Stack(int i)
+    {
+    	arr = new int[i];
+        int capacity = i;
+        int top = -1;
+    }
+    public void printstack() {
+        for (int i = 1; i <= top; i++) {
+          System.out.print(arr[i] + ", ");
+        }
+      }
+    
+    public boolean isfull()
+    {
+    	if(top== capacity-1)
+    	{
+    		return true;
+    	}
+    	else 
+    		return false;
+    }
+    
+    
+	public void push(int element) {
+		
+		if(isfull())
+		{
+			System.out.println("The stack is full");
+			 System.exit(1);
+		}
+		else
+		{ System.out.println("Inserting " + element);
+	    arr[++top] = element;
+		}
+		
+		}
+	
+		public boolean isEmpty() 
+		{
+	    	if(top== -1)
+	    	{
+	    		return true;
+	    	}
+	    	else 
+	    		return false;
+	    }
+		
+	
+		public int pop() {
+		    if (isEmpty()) {
+		      System.out.println("STACK EMPTY");
+		      
+		      System.exit(1);
+		    }
+
+		    return arr[top--];
+		  }
+		public void peek() {
+			System.out.print("\nThe top element of Stack is = "+ arr[top]);
+		}
+		
+		public static void main(String[] args) {
+		    Stack stack = new Stack(5);
+
+		    stack.push(1);
+		    stack.push(2);
+		    stack.push(3);
+
+		    System.out.print("Stack: ");
+		    stack.printstack();
+		    
+		    stack.pop();
+		    System.out.print("\nAfter pop() Stack = ");
+		    stack.printstack();
+		    
+		    stack.peek();
+
+	}
+
+}
