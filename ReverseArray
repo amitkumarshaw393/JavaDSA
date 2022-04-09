@@ -1,0 +1,27 @@
+import java.util.*;
+public class Reversearray {
+
+	
+	    public static void main(String[] args) {
+	        
+	        Scanner sc=new Scanner(System.in);
+	        System.out.println("Enter the size of the array");
+	        int a=sc.nextInt();
+	        int n=a;
+	        int [] arr1 = new int [a];
+	        int [] arr = new int [a];
+	        for(int i=0;i<a;i++)
+	        {
+	            arr[i]=sc.nextInt();
+	        }
+	        for(int j=0;j<n;j++)
+	        {
+	            arr1[j]=arr[a-1];
+	            a--;
+	        }
+	        for(int k=0;k<n;k++)
+	        System.out.print("["+arr1[k]+"]"); 
+	    }
+	}
+
+
