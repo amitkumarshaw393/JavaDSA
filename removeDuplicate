@@ -1,0 +1,31 @@
+
+import java.util.*;
+public class Main
+
+{
+    
+ static int  rem(int[] nums) {
+        HashSet<Integer>v1=new HashSet<>();
+        int res=0;
+        for(int i:nums)
+            v1.add(i);
+        
+        res=v1.size();
+        
+        return res;
+    
+}
+
+	public static void main(String[] args) {
+	    int[] heigth=new int[5];
+	    
+	    Scanner sc=new Scanner(System.in);
+	    for(int i=0;i<5;i++)
+	    heigth[i]=sc.nextInt();
+	    
+	     
+	    System.out.print("the total length removing the duplicate element = "+rem(heigth));
+	
+	}
+}
+
