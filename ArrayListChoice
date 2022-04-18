@@ -1,0 +1,59 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java.util.*;
+public class Main
+{
+    static ArrayList<Integer>v1=new ArrayList<Integer>();
+    public static void call(int a)
+    {
+        switch(a)
+		{
+		    case 1:System.out.println("How Many times to want to add");
+		          Scanner sc =new Scanner (System.in);
+		            int ch=sc.nextInt();
+		            for(int i=0;i<ch;i++)
+		            {
+		                int addd=sc.nextInt();
+		                v1.add(addd);
+		            }
+		            
+		            break;
+		                
+		    case 2:System.out.println(v1);
+		            break;
+		    case 3:System.out.println("Enter the Index you want to remove");
+		             Scanner cc =new Scanner (System.in);
+		            int remov=cc.nextInt();
+		             v1.remove(remov);
+		             break;
+		    case 4:
+		        System.out.println("Close");
+		        break;
+		}
+    }
+    public static int ask()
+    {
+        System.out.println("\n\n1.Put"+"\n2.get"+"\n3. Remove"+"\n4. Exit");
+		Scanner sc =new Scanner (System.in);
+		int a=sc.nextInt();
+		
+		return a;
+		
+    }
+	public static void main(String[] args) {
+		
+	    int b=ask();
+	    while(b!=4)
+		{
+	     call(b);
+		 b=ask();
+		    
+		}
+		System.exit(1);
+	}
+}
