@@ -1,0 +1,71 @@
+import java.util.*;
+public class Main
+{
+    public static void print(Node root)
+    {
+        String str= root.data+"->";
+        for(Node children:root.child)
+        {
+            str+= children.data+",";
+        }
+        str+=".";
+        System.out.println(str);
+        
+        for(Node children:root.child)
+        {
+            print(children);
+        }
+    }
+    public static class Node
+    {
+        int data;
+		ArrayList<Node>child=new ArrayList<>();
+		
+    }
+    public static int max(Node root)
+    {
+      int maximum=0;
+      for(Node large:root.child)
+      {
+          int cm=max(large);
+          if(cm>maximum)
+          maximum=cm;
+      }
+      if(root.data>maximum)
+      maximum=root.data;
+      
+      return maximum;
+    }
+   
+	public static void main(String[] args) {
+		
+		Stack<Node>st=new Stack<>();
+		int[] arr={2,-7,8,-1,-1,5,5,10,-1,-1,-1,7,8,6,-1,-1,-1};
+		Node root=null;
+		for(int i=0;i<arr.length;i++)
+		{
+		    if(arr[i]==-1)
+		    {
+		       st.pop(); 
+		    }
+		    else
+		    {
+		        Node t = new Node();
+		        t.data=arr[i];
+		        if(st.size()>0)
+		        {
+		            st.peek().child.add(t);
+		        }
+		        else
+		        root=t;
+		    
+		    st.push(t);
+		        
+		    }
+		    
+		    
+		}
+		print(root);
+	System.out.println(max(root));
+	}
+}
