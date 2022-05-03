@@ -16,7 +16,7 @@ public class Main
         int [] arr=new int[2];
         arr[0]=-1;
         arr[1]=-1;
-        while(l<h)
+         while(target+1>numbers[l])
         {
             int mid=l;
             for(int i=0;i<numbers.length;i++)
