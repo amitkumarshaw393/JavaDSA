@@ -1,0 +1,50 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java.util.*;
+public class Main
+{
+       public static int[] twoSum(int[] numbers, int target) {
+      int l=0;
+
+        int h= numbers.length-1;
+        int a=0,b=0;
+        int [] arr=new int[2];
+        arr[0]=-1;
+        arr[1]=-1;
+        while(l<h)
+        {
+            int mid=l;
+            for(int i=0;i<numbers.length;i++)
+            {
+                a=mid+1;
+            if(target-numbers[mid]==numbers[i])
+                b=i+1;
+                }
+            if(a>0 || b>0)
+            { arr[0]=a;
+            arr[1]=b;
+            break;
+            }
+            else
+            {
+                l++;
+            }
+        }
+        return arr;
+    }
+
+	public static void main(String[] args) {
+	   int[] nums =new int[]{-1,0};
+            int target=-1;
+        int[] a=Main.twoSum(nums,target);
+        for(int x:a)
+System.out.println(x);
+
+    }
+}
+	
