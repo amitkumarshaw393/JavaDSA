@@ -3,8 +3,7 @@ class OccurenceOfCharInString {
  
     static void v1(String str)
     {
-        HashMap<Character, Integer> v1
-            = new HashMap<Character, Integer>();
+        HashMap<Character, Integer> v1 = new HashMap<Character, Integer>();
  
         char[] strArray = str.toCharArray();
  
